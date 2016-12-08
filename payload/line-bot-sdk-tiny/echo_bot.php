@@ -41,6 +41,18 @@ foreach ($client->parseEvents() as $event) {
                         ));
                     }
 
+                    elseif (strstr($text, 'oyasumi')) {
+                        $client->replyMessage(array(
+                            'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                    'type' => 'text',
+                                    'text' => 'Oyasumi ^^ selamat istirahat'
+                                )
+                            )
+                        ));
+                    }
+
                     elseif (strstr($text, 'maichan') or strstr($text, 'mai-chan') or strstr($text, 'maichan')) {
                         //TENTANG MAICHAN START
                         if (strstr($text, 'pinter') or strstr($text, 'pintar') or strstr($text, 'keren') or strstr($text, 'cakep') or strstr($text, 'kawai') or strstr($text, 'lucu') or strstr($text, 'imut') or strstr($text, 'cantik')) {
