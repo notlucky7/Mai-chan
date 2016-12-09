@@ -68,7 +68,7 @@ foreach ($client->parseEvents() as $event) {
 + Masukin keyword rando, awkarin, younglex
 0.1
 + Nih bot lahir dari si Hendra
-+ Masukin keyword dasar;
++ Masukin keyword dasar';
                     reply_message($client, $event['replyToken'], $message_text);
                     }
 
