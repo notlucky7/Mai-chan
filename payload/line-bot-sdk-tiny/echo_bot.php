@@ -54,27 +54,23 @@ foreach ($client->parseEvents() as $event) {
                         reply_message($client, $event['replyToken'], $message_text);
                     }
 
-
+                    //KEYWORD MAICHAN START//
                     elseif (strstr($text, 'maichan') or strstr($text, 'mai-chan') or strstr($text, 'mai chan')) {
                         //TENTANG MAICHAN START//
                         if (strstr($text, 'pinter') or strstr($text, 'pintar') or strstr($text, 'keren') or strstr($text, 'cakep') or strstr($text, 'kawai') or strstr($text, 'lucu') or strstr($text, 'imut') or strstr($text, 'cantik')) {
                             $message_text = 'Makasih ><';
-                            reply_message($client, $event['replyToken'], $message_text);
                         }
 
                         if (strstr($text, 'bodo') or strstr($text, 'jahat') or strstr($text, 'jelek') or strstr($text, 'bau') or strstr($text, 'lacur') or strstr($text, 'bego')) {
                             $message_text = 'Kamu jangan jahat gitu dong ke aku :((';
-                            reply_message($client, $event['replyToken'], $message_text);
                         }
 
                         if (strstr($text, 'beliin') or strstr($text, 'ambilin') or strstr($text, 'traktir') or strstr($text, 'sewa') or strstr($text, 'ikkeh') or strstr($text, 'ikeh') or strstr($text, 'anuan') or strstr($text, 'cariin')) {
                             $message_text = 'Enak aja, ga mau :p';
-                            reply_message($client, $event['replyToken'], $message_text);
                         }
 
                         if (strstr($text, 'vvibu') or strstr($text, 'wibu') or strstr($text, 'weeaboo')) {
                             $message_text = 'Ngaca dong bos.';
-                            reply_message($client, $event['replyToken'], $message_text);
                         }
 
                         if (strstr($text, 'jomblo') or strstr($text, 'single') or strstr($text, 'punya pacar')) {
@@ -82,7 +78,6 @@ foreach ($client->parseEvents() as $event) {
 'Jomblo sih... emang kamu mau sama karakter ga nyata kaya aku?
 
 PS: Nikahin waifu lu aja kagak bisa, apalagi Mai-chan';
-                            reply_message($client, $event['replyToken'], $message_text);
                         }
 
 
@@ -360,6 +355,8 @@ PS: Nikahin waifu lu aja kagak bisa, apalagi Mai-chan';
     Begitulah katanya ^^';
                             }
                         }
+
+                        reply_message($client, $event['replyToken'], $message_text);
                     }
 
                     elseif ($text == '@bye') {
