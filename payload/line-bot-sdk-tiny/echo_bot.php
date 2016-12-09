@@ -47,25 +47,28 @@ foreach ($client->parseEvents() as $event) {
                         $message_text =
 'CHANGELOG
 
-<<VER 0>>
-0.1
-- Nih bot lahir dari si Hendra
-- Masukin keyword dasar
-0.2
-- Masukin keyword nama member
-- Masukin keyword rando, awkarin, younglex
-
-<<VER 1>>
-1.0
-- Pake LINE Messaging API, yg tiny
-- Keyword lebih fleksibel, disisipin di kalimat juga kebaca
-1.1
-- Nambahin keyword oyasumi, @bye, maichan pinter, maichan bego, dll
-
 <<VER 2>>
 2.0
-- Bikin fungsi reply_message, biar baca kodingannya lebih enak
-- Kalo mau nanya ke maichan, harus pake kata "maichan" atau "mai-chan", contoh: "maichan tyo siapa?" atau "maichan jomblo?"';
++ Bikin fungsi reply_message, biar baca kodingannya lebih enak
++ Kalo mau nanya ke maichan, harus pake kata "maichan" atau "mai-chan", contoh: "maichan tyo siapa?" atau "maichan jomblo?"
++ Nambah kata tanya "siapa" (baru itu doang yang jalan)
+- Ngehapus keyword tanda tanya
+- Ga bisa nanya kaya contoh: "akam?" atau "akam siapa?"
+
+<<VER 1>>
+1.1
++ Nambahin keyword oyasumi, @bye, maichan pinter, maichan bego, maichan jomblo, maichan beliin
+1.0
++ Pake LINE Messaging API, yg tiny
++ Keyword lebih fleksibel, disisipin di kalimat juga kebaca
+
+<<VER 0>>
+0.2
++ Masukin keyword nama member
++ Masukin keyword rando, awkarin, younglex
+0.1
++ Nih bot lahir dari si Hendra
++ Masukin keyword dasar;
                     reply_message($client, $event['replyToken'], $message_text);
                     }
 
