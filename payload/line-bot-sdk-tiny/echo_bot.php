@@ -43,14 +43,46 @@ foreach ($client->parseEvents() as $event) {
                 case 'text':
                     $text = strtolower($message['text']);
 
-                    if (strstr($text, 'anjing') or strstr($text, 'goblok') or strstr($text, 'tolol') or strstr($text, 'bangsat') or strstr($text, 'kontol') or strstr($text, 'titit') or strstr($text, 'memek') or strstr($text, 'ngentot') or strstr($text, 'peler')) {
+                    if ($text == '@changelog') {
+                        $message_text =
+'CHANGELOG
+
+<<VER 0>>
+0.1
+- Nih bot lahir dari si Hendra
+- Masukin keyword dasar
+0.2
+- Masukin keyword nama member
+- Masukin keyword rando, awkarin, younglex
+
+<<VER 1>>
+1.0
+- Pake LINE Messaging API, yg tiny
+- Keyword lebih fleksibel, disisipin di kalimat juga kebaca
+1.1
+- Nambahin keyword oyasumi, @bye, maichan pinter, maichan bego, dll
+
+<<VER 2>>
+2.0
+- Bikin fungsi reply_message, biar baca kodingannya lebih enak
+- Kalo mau nanya ke maichan, harus pake kata "maichan" atau "mai-chan", contoh: "maichan tyo siapa?" atau "maichan jomblo?"'
+                    reply_message($client, $event['replyToken'], $message_text);
+                    }
+
+
+                    elseif ($text == '@bye') {
+                        reply_message($client, $event['replyToken'], 'Tolong jangan kick aku dong kk :((');
+                    }
+
+
+                    elseif (strstr($text, 'anjing') or strstr($text, 'goblok') or strstr($text, 'tolol') or strstr($text, 'bangsat') or strstr($text, 'kontol') or strstr($text, 'titit') or strstr($text, 'memek') or strstr($text, 'ngentot') or strstr($text, 'peler')) {
                         $message_text = 'JAGA BAHASA LU NJING WKWK';
                         reply_message($client, $event['replyToken'], $message_text);
                     }
 
 
                     elseif (strstr($text, 'oyasumi')) {
-                        $message_text = 'Oyasmi ^^ selamat istirahat ya :)';
+                        $message_text = 'Oyasumi ^^ selamat istirahat ya :)';
                         reply_message($client, $event['replyToken'], $message_text);
                     }
 
@@ -357,10 +389,6 @@ PS: Nikahin waifu lu aja kagak bisa, apalagi Mai-chan';
                         }
 
                         reply_message($client, $event['replyToken'], $message_text);
-                    }
-
-                    elseif ($text == '@bye') {
-                        reply_message($client, $event['replyToken'], 'Tolong jangan kick aku dong kk :((');
                     }
                     break;
                 default:
