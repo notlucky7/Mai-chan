@@ -26,10 +26,8 @@ foreach ($client->parseEvents() as $event) {
     switch ($event['type']) {
         case 'message':
             $message = $event['message'];
-            switch ($message['type']) {
-                case 'text':
 
-                    //REPLY TEXT FUNCTION START//
+            //REPLY TEXT FUNCTION START//
                     function reply_message($text) {
                         $client->replyMessage(array(
                             'replyToken' => $event['replyToken'],
@@ -41,7 +39,10 @@ foreach ($client->parseEvents() as $event) {
                             )
                         ));
                     }
-                    //REPLY TEXT FUNCTION END//
+            //REPLY TEXT FUNCTION END//
+
+            switch ($message['type']) {
+                case 'text':
 
                     $text = strtolower($message['text']);
                     if (strstr($text, 'anjing') or strstr($text, 'goblok') or strstr($text, 'tolol') or strstr($text, 'bangsat') or strstr($text, 'kontol') or strstr($text, 'titit') or strstr($text, 'memek') or strstr($text, 'ngentot') or strstr($text, 'peler')) {
