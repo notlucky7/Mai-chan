@@ -44,92 +44,37 @@ foreach ($client->parseEvents() as $event) {
 
                     $text = strtolower($message['text']);
                     if (strstr($text, 'anjing') or strstr($text, 'goblok') or strstr($text, 'tolol') or strstr($text, 'bangsat') or strstr($text, 'kontol') or strstr($text, 'titit') or strstr($text, 'memek') or strstr($text, 'ngentot') or strstr($text, 'peler')) {
-                        /*$client->replyMessage(array(
-                            'replyToken' => $event['replyToken'],
-                            'messages' => array(
-                                array(
-                                    'type' => 'text',
-                                    'text' => 'JAGA BAHASA LU NJING WKWK'
-                                )
-                            )
-                        ));*/
                         reply_message($client, $event['replyToken'], 'JAGA BAHASA LU NJING WKWK');
                     }
 
                     elseif (strstr($text, 'oyasumi')) {
-                        $client->replyMessage(array(
-                            'replyToken' => $event['replyToken'],
-                            'messages' => array(
-                                array(
-                                    'type' => 'text',
-                                    'text' => 'Oyasumi ^^ selamat istirahat'
-                                )
-                            )
-                        ));
+                        reply_message($client, $event['replyToken'], 'Oyasumi ^^ selama istirahat ya :)');
                     }
 
                     elseif (strstr($text, 'maichan') or strstr($text, 'mai-chan') or strstr($text, 'maichan')) {
                         //TENTANG MAICHAN START
                         if (strstr($text, 'pinter') or strstr($text, 'pintar') or strstr($text, 'keren') or strstr($text, 'cakep') or strstr($text, 'kawai') or strstr($text, 'lucu') or strstr($text, 'imut') or strstr($text, 'cantik')) {
-                            $client->replyMessage(array(
-                            'replyToken' => $event['replyToken'],
-                            'messages' => array(
-                                array(
-                                    'type' => 'text',
-                                    'text' => 'Makasih ><'
-                                )
-                            )
-                        ));
+                            reply_message($client, $event['replyToken'], 'Makasih ><');
                         }
 
                         if (strstr($text, 'bodo') or strstr($text, 'jahat') or strstr($text, 'jelek') or strstr($text, 'bau') or strstr($text, 'lacur')) {
-                            $client->replyMessage(array(
-                            'replyToken' => $event['replyToken'],
-                            'messages' => array(
-                                array(
-                                    'type' => 'text',
-                                    'text' => 'Kamu jangan jahat gitu dong ke aku :(('
-                                )
-                            )
-                        ));
+                            reply_message($client, $event['replyToken'], 'Kamu jangan jahat gitu dong ke aku :((');
                         }
 
-                        if (strstr($text, 'beliin') or strstr($text, 'ambilin') or strstr($text, 'traktir') or strstr($text, 'sewa') or strstr($text, 'ikkeh') or strstr($text, 'ikeh') or strstr($text, 'anuan')) {
-                            $client->replyMessage(array(
-                            'replyToken' => $event['replyToken'],
-                            'messages' => array(
-                                array(
-                                    'type' => 'text',
-                                    'text' => 'Ga mau :p'
-                                )
-                            )
-                        ));
+                        if (strstr($text, 'beliin') or strstr($text, 'ambilin') or strstr($text, 'traktir') or strstr($text, 'sewa') or strstr($text, 'ikkeh') or strstr($text, 'ikeh') or strstr($text, 'anuan') or strstr($text, 'cariin')) {
+                            reply_message($client, $event['replyToken'], 'Enak aja, ga mau :p');
                         }
 
                         if (strstr($text, 'vvibu') or strstr($text, 'wibu') or strstr($text, 'weeaboo')) {
-                            $client->replyMessage(array(
-                            'replyToken' => $event['replyToken'],
-                            'messages' => array(
-                                array(
-                                    'type' => 'text',
-                                    'text' => 'Ngaca bos'
-                                )
-                            )
-                        ));
+                            reply_message($client, $event['replyToken'], 'Ngaca dong bos');
                         }
 
                         if (strstr($text, 'jomblo') or strstr($text, 'single') or strstr($text, 'punya pacar')) {
-                            $client->replyMessage(array(
-                            'replyToken' => $event['replyToken'],
-                            'messages' => array(
-                                array(
-                                    'type' => 'text',
-                                    'text' => 'Hmmm sebenernya aku jomblo sih... tapi aku cuma penghuni dunia maya :(
+                            $message_text =
+                            'Jomblo sih... emang kamu mau sama karakter ga nyata kaya aku?
 
-PS: Lu nikah ama waifu lu aja kagak bisa, apalagi maichan'
-                                )
-                            )
-                        ));
+                            PS: Nikahin waifu lu aja kagak bisa, apalagi Mai-chan';
+                            reply_message($client, $event['replyToken'], $message_text);
                         }
                     }
 
