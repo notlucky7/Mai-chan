@@ -389,6 +389,16 @@ PS: Nikahin waifu lu aja kagak bisa, apalagi Mai-chan';
 
     Begitulah katanya ^^';
                             }
+
+
+                            //NAMA RANDOM START//
+                            if (strstr($text, 'awkarin')) {
+                                $message_text = "KLEAN SMUA SUTJIH AQUWH PNUH DOSYAAAHHHH";
+                            }
+
+                            if (strstr($text, 'rando')) {
+                                $message_text = "HEY WASSAP MA FRIEND";
+                            }
                         }
 
                         reply_message($client, $event['replyToken'], $message_text);
