@@ -65,7 +65,7 @@ foreach ($client->parseEvents() as $event) {
 <<VER 2>>
 2.0
 - Bikin fungsi reply_message, biar baca kodingannya lebih enak
-- Kalo mau nanya ke maichan, harus pake kata "maichan" atau "mai-chan", contoh: "maichan tyo siapa?" atau "maichan jomblo?"'
+- Kalo mau nanya ke maichan, harus pake kata "maichan" atau "mai-chan", contoh: "maichan tyo siapa?" atau "maichan jomblo?"';
                     reply_message($client, $event['replyToken'], $message_text);
                     }
 
