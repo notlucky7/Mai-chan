@@ -21,32 +21,30 @@ require_once('./LINEBotTiny.php');
 $channelAccessToken = '9bZUdMvHqvsGsTcPeFQRzYRdl9ZiY9wJ8qoue1bxIti8MjKkIsmt+8M5dIWBUd/wqYcloX5JsqIiA4Be25SSqkM/Wi/pG4peQU40O0ZE73G3DqG3PUEocLCJMRUB3qZjdp08Ab/PZZXc+a21FPyzvwdB04t89/1O/w1cDnyilFU=';
 $channelSecret = '552e9bfb41edce9aec292ea0f3ca4cce';
 
+function reply_message($client, $replytoken, $text) {
+    $client->replyMessage(array(
+        'replyToken' => $replytoken,
+        'messages' => array(
+            array(
+                'type' => 'text',
+                'text' => $text
+            )
+        )
+    ));
+}
+
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 foreach ($client->parseEvents() as $event) {
     switch ($event['type']) {
         case 'message':
             $message = $event['message'];
 
-            //REPLY TEXT FUNCTION START//
-                    function reply_message($text) {
-                        $client->replyMessage(array(
-                            'replyToken' => $event['replyToken'],
-                            'messages' => array(
-                                array(
-                                    'type' => 'text',
-                                    'text' => $text
-                                )
-                            )
-                        ));
-                    }
-            //REPLY TEXT FUNCTION END//
-
             switch ($message['type']) {
                 case 'text':
 
                     $text = strtolower($message['text']);
                     if (strstr($text, 'anjing') or strstr($text, 'goblok') or strstr($text, 'tolol') or strstr($text, 'bangsat') or strstr($text, 'kontol') or strstr($text, 'titit') or strstr($text, 'memek') or strstr($text, 'ngentot') or strstr($text, 'peler')) {
-                        /*$client->replyMessage(array(
+                        $client->replyMessage(array(
                             'replyToken' => $event['replyToken'],
                             'messages' => array(
                                 array(
@@ -54,8 +52,8 @@ foreach ($client->parseEvents() as $event) {
                                     'text' => 'JAGA BAHASA LU NJING WKWK'
                                 )
                             )
-                        ));*/
-                        reply_message('JAGA BAHASA LU NJING WKWK');
+                        ));
+                        reply_message($client, $event['replyToken'], 'JAGA BAHASA LU NJING WKWK');
                     }
 
                     elseif (strstr($text, 'oyasumi')) {
