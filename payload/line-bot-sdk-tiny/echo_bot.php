@@ -28,9 +28,24 @@ foreach ($client->parseEvents() as $event) {
             $message = $event['message'];
             switch ($message['type']) {
                 case 'text':
+
+                    //REPLY TEXT FUNCTION START//
+                    function reply_message($text) {
+                        $client->replyMessage(array(
+                            'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                    'type' => 'text',
+                                    'text' => $text
+                                )
+                            )
+                        ));
+                    }
+                    //REPLY TEXT FUNCTION END//
+
                     $text = strtolower($message['text']);
                     if (strstr($text, 'anjing') or strstr($text, 'goblok') or strstr($text, 'tolol') or strstr($text, 'bangsat') or strstr($text, 'kontol') or strstr($text, 'titit') or strstr($text, 'memek') or strstr($text, 'ngentot') or strstr($text, 'peler')) {
-                        $client->replyMessage(array(
+                        /*$client->replyMessage(array(
                             'replyToken' => $event['replyToken'],
                             'messages' => array(
                                 array(
@@ -38,7 +53,8 @@ foreach ($client->parseEvents() as $event) {
                                     'text' => 'JAGA BAHASA LU NJING WKWK'
                                 )
                             )
-                        ));
+                        ));*/
+                        reply_message('JAGA BAHASA LU NJING WKWK');
                     }
 
                     elseif (strstr($text, 'oyasumi')) {
