@@ -109,7 +109,7 @@ PS: Nikahin waifu lu aja kagak bisa, apalagi Mai-chan';
     'Fawwaz itu, salah satu admin di MAI ><
     Pernah deket sama cewe, tapi sayang. Gagal jadian T.T
     Yang suka nagih - nagihin uang kaos.
-    "JANGAN LUPA BAYAR KAOS! 5 lagi 2 LUSIN!!"'
+    "JANGAN LUPA BAYAR KAOS! 5 lagi 2 LUSIN!!"';
                             }
                         
 
@@ -360,15 +360,7 @@ PS: Nikahin waifu lu aja kagak bisa, apalagi Mai-chan';
                     }
 
                     elseif ($text == '@bye') {
-                        $client->replyMessage(array(
-                            'replyToken' => $event['replyToken'],
-                            'messages' => array(
-                                array(
-                                    'type' => 'text',
-                                    'text' => 'Ih jangan usir aku kk :('
-                                )
-                            )
-                        ));
+                        reply_message($client, $event['replyToken'], 'Tolong jangan kick aku dong kk :((');
                     }
                     break;
                 default:
