@@ -66,6 +66,7 @@ foreach ($client->parseEvents() as $event) {
 0.2
 + Masukin keyword nama member
 + Masukin keyword rando, awkarin, younglex
++ keyword acak buat senang - senang
 0.1
 + Nih bot lahir dari si Hendra
 + Masukin keyword dasar';
@@ -86,6 +87,11 @@ foreach ($client->parseEvents() as $event) {
 
                     elseif (strstr($text, 'oyasumi')) {
                         $message_text = 'Oyasumi ^^ selamat istirahat ya :)';
+                        reply_message($client, $event['replyToken'], $message_text);
+                    }
+
+                    elseif (strstr($text, 'ohayou')) {
+                        $message_text = 'Pagi juga kamu~~ semoga pagi ini cerah yaa. Secerah cintaku kepadamu ><';
                         reply_message($client, $event['replyToken'], $message_text);
                     }
 
@@ -326,7 +332,7 @@ PS: Nikahin waifu lu aja kagak bisa, apalagi Mai-chan';
     Bangsyad jagonya. Kamu tertarik?';
                             }
 
-                            if (strstr($text, 'ban')) {
+                            if (strstr($text, 'labana')) {
                                 $message_text =
     'Salah satu member MAI >< dia itu cosplayer looh.
     Tapi mirip kaya Akam, JAGA bokong kalian!! jika tidak ingin kejadian yang tidak - tidak :)
